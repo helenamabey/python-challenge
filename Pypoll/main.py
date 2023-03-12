@@ -10,7 +10,7 @@ import pandas as pd
 # In[3]:
 
 
-csv_path = "/Users/helenamabey/Downloads/Instructions-3/PyPoll/Resources/election_data.csv"
+csv_path = "PyPoll/Resources/election_data.csv"
 election_results = pd.read_csv(csv_path)
 
 
@@ -81,7 +81,7 @@ print("-------------------------")
 # In[ ]:
 
 
-with open('/Users/helenamabey/Downloads/Instructions-3/PyPoll/Resources/analysis/final.txt', 'w') as f:
+with open('PyPoll/analysis/final.txt', 'w') as f:
     f.write("Election Results\n")
     f.write("-------------------------\n")
     f.write(f'Total Votes: {total_votes}\n')
