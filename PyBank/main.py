@@ -10,7 +10,7 @@ import pandas as pd
 # In[2]:
 
 
-csv_path = "PyBank/Resources/budget_data.csv"
+csv_path = "/Resources/budget_data.csv"
 financials = pd.read_csv(csv_path)
 #financials.head()
 
@@ -79,7 +79,7 @@ print(f'Greatest Decrease in Profits: {financials.loc[financials["average_change
 # In[18]:
 
 
-with open('PyBank/analysis/final.txt', 'w') as f:
+with open('/analysis/final.txt', 'w') as f:
     f.write("Financial Analysis\n")
     f.write("----------------------------\n")
     f.write(f'Total Months: {total_months}\n')
