@@ -22,7 +22,7 @@ election_results = pd.read_csv(csv_path)
 
 # In[5]:
 
-
+#total number of votes
 total_votes = election_results["Ballot ID"].count()
 
 
@@ -34,26 +34,26 @@ total_votes = election_results["Ballot ID"].count()
 
 # In[7]:
 
-
+#candidate list
 candidates = election_results["Candidate"].unique()
 
 
 # In[8]:
 
-
+#votes per candidate
 votes = election_results["Candidate"].value_counts()[election_results["Candidate"].unique()]
 
 
 # In[9]:
 
-
+#most popular vote
 winner = election_results["Candidate"].mode()
 #print(winner.item())
 
 
 # In[10]:
 
-
+#percentage of votes
 percentage = round((votes/total_votes) * 100, 3)
 
 
@@ -65,7 +65,7 @@ percentage = round((votes/total_votes) * 100, 3)
 
 
 # In[12]:
-
+#print to terminal
 
 print("Election Results")
 print("-------------------------")
@@ -79,7 +79,7 @@ print("-------------------------")
 
 
 # In[ ]:
-
+#export to txt file
 
 with open('analysis/final.txt', 'w') as f:
     f.write("Election Results\n")
