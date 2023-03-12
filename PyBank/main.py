@@ -17,56 +17,56 @@ financials = pd.read_csv(csv_path)
 
 # In[3]:
 
-
+#total number of months
 total_months = financials["Date"].count()
-#total_months
+
 
 
 # In[4]:
 
-
+#net total of profit and losses
 net_total = financials["Profit/Losses"].sum()
-#net_total
+
 
 
 # In[5]:
 
-
+#create column to calculate change month over month
 financials["Changes"] = financials["Profit/Losses"].shift(1)
-#financials.head()
+
 
 
 # In[6]:
 
-
+#calculate change month over month
 financials["average_change"] = financials["Profit/Losses"] - financials["Changes"]
 #financials.head()
 
 
 # In[7]:
 
-
+#average change
 mean = financials["average_change"].mean()
-#mean
+
 
 
 # In[8]:
 
-
+#greatest increase in profits
 increase = financials["average_change"].max()
-#increase
+
 
 
 # In[9]:
 
-
+#greatest decrease in profits
 decrease = financials["average_change"].min()
-#decrease
+
 
 
 # In[14]:
 
-
+#print to terminal
 print("Financial Analysis")
 print("----------------------------")
 print(f'Total Months: {total_months}')
@@ -78,7 +78,7 @@ print(f'Greatest Decrease in Profits: {financials.loc[financials["average_change
 
 # In[18]:
 
-
+#export to txt file
 with open('analysis/final.txt', 'w') as f:
     f.write("Financial Analysis\n")
     f.write("----------------------------\n")
